@@ -1,11 +1,22 @@
 <?php
 namespace Controllers;
 
+use Models\Estudiante as Estudiante;
+
 class estudiantesController {
 
+    private $estudiante;
+
+    public function __construct() {
+        $this->estudiante = new Estudiante();
+    }
+
     public function index() {
-        echo "Hola, soy el index del estudiante";
+        $datos = $this->estudiante->listar();
+        return $datos;
     }
 
 }
+
+$estudiantes = new estudiantesController();
 ?>
