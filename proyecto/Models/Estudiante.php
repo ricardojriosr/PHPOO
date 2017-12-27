@@ -20,10 +20,6 @@ class Estudiante {
         $this->$atributo = $contenido;
     }
 
-    public function hola() {
-        echo "Hola soy un estudiante";
-    }
-
     public function get($atributo) {
         return $this->$atributo;
     }
@@ -49,19 +45,19 @@ class Estudiante {
     }
 
     public function edit() {
-        $sql = "UPDATE FROM estudiantes
+        $sql = "UPDATE estudiantes
         SET nombre = '{$this->nombre}', edad = '{$this->edad}', promedio = '{$this->promedio}', id_seccion = '{$this->id_seccion}'
-        WHERE id = '{$this->id}'"
+        WHERE id = '{$this->id}'";
         $this->con->consultaSimple($sql);
     }
 
     public function view() {
         $sql = "SELECT t1.*, t2.nombre AS nombre_seccion
         FROM estudiantes t1
-        INNER JOIN secciones t2 ON t1.id_seccion = t2.id_seccion
+        INNER JOIN secciones t2 ON t1.id_seccion = t2.id
         WHERE t1.id = '{$this->id}'";
         $datos = $this->con->consultaRetorno($sql);
-        $row = mysqli_fetch_asoc($datos);
+        $row = mysqli_fetch_assoc($datos);
         return $row;
     }
 

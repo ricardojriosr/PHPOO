@@ -36,7 +36,7 @@ class Seccion() {
     }
 
     public function edit() {
-        $sql = "UPDATE FROM seccioens SET nombre = '{$this->nombre}'";
+        $sql = "UPDATE seccioens SET nombre = '{$this->nombre}'";
         $this->con->consultaSimple($sql);
     }
 
