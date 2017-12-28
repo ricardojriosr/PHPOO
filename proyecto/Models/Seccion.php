@@ -1,7 +1,7 @@
 <?php
 namespace Models;
 
-class Seccion() {
+class Seccion {
 
     private $id;
     private $nombre;

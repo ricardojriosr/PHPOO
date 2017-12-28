@@ -16,9 +16,9 @@ class Enrutador {
               $mostrar = "Controllers\\"  . $controlador;
               $controlador = new $mostrar;
               if (!isset($argumento)) {
-                  call_user_func(array($controlador, $metodo));
+                  $datos = call_user_func(array($controlador, $metodo));
               } else {
-                  call_user_func(array($controlador, $metodo), $argumento);
+                  $datos = call_user_func(array($controlador, $metodo), $argumento);
               }
           }
 
