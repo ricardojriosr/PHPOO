@@ -20,13 +20,13 @@ class Seccion {
     }
 
     public function listar() {
-        $sql = "SELECT * FROM secciones";
+        $sql = "SELECT * FROM secciones ORDER BY nombre";
         $datos = $this->con->consultaRetorno($sql);
         return $datos;
     }
 
     public function add() {
-        $sql = "INSERT INTO secciones (id, nombres) VALUES (null,'{$this->nombre}')";
+        $sql = "INSERT INTO secciones (id, nombre) VALUES (null,'{$this->nombre}')";
         $this->con->consultaSimple($sql);
     }
 
