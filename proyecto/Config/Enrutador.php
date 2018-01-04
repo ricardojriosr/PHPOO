@@ -11,6 +11,9 @@ class Enrutador {
               $metodo = "index";
           }
           $argumento = $request->getArgumento();
+          if (count($argumento) > 0) {
+              $argumento = $argumento[0];
+          }
           if (is_readable($ruta)) {
               require_once $ruta;
               $mostrar = "Controllers\\"  . $controlador;

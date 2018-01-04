@@ -51,7 +51,41 @@ class estudiantesController {
         }
     }
 
-}
+    public function editar($id) {
+        if (!$_POST) {
+            $this->estudiante->set("id",$id[0]);
+            $datos = $this->estudiante->view();
+            return $datos;
+        } else {
+            $this->estudiante->set("id",$_POST['id']);
+            $this->estudiante->set("nombre", $_POST['nombre']);
+            $this->estudiante->set("edad", $_POST['edad']);
+            $this->estudiante->set("promedio", $_POST['promedio']);
+            $this->estudiante->set("id_seccion", $_POST['id_seccion']);
+            $this->estudiante->edit();
+            header("Location: " . URL . "estudiantes");
+        }
 
+    }
+
+    public function listarSecciones() {
+        $datos = $this->seccion->listar();
+        return $datos;
+    }
+
+    public function ver($id){
+  			$this->estudiante->set("id",$id[0]);
+  			$datos = $this->estudiante->view();
+  			return $datos;
+		}
+
+    public function eliminar($id) {
+        $this->estudiante->set("id",$id[0]);
+        $this->estudiante->delete();
+        header("Location: " . URL . "estudiantes");
+    }
+
+}
+$estudiantes = new estudiantesController();
 
 ?>
