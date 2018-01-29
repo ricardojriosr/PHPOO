@@ -19,7 +19,6 @@ class User {
     }
 
     public function login() {
-
         $this->auth_user();
     }
 
