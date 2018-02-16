@@ -6,6 +6,6 @@ define("DB_PASS", "");
 define("DB_NAME", "shareboard");
 
 //Define URL
-define("ROOT_PATH","/");
-define("ROOT_URL", "localhost:8080/PHPOO/UdemyProject");
+define("ROOT_PATH","/PHPOO/UdemyProject/");
+define("ROOT_URL", "http://localhost:8080/PHPOO/UdemyProject/");
 ?>
