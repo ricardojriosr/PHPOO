@@ -23,9 +23,9 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item"><a href="<?php echo ROOT_URL; ?>login" class="nav-link">Login</a>
+                        <li class="nav-item"><a href="<?php echo ROOT_URL; ?>users/login" class="nav-link">Login</a>
                         </li>
-                        <li class="nav-item"><a href="<?php echo ROOT_URL; ?>register" class="nav-link">Register</a>
+                        <li class="nav-item"><a href="<?php echo ROOT_URL; ?>users/register" class="nav-link">Register</a>
                         </li>
                     </ul>
                 </div>
