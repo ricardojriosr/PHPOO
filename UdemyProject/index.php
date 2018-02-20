@@ -1,8 +1,12 @@
 <?php
+//Start Sessions
+session_start();
+
 //Include Config
 require('config.php');
 
 //Include Base Classes
+require('classes/Messages.php');
 require('classes/Bootstrap.php');
 require('classes/Controller.php');
 require('classes/Model.php');

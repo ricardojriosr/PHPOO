@@ -23,10 +23,13 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item"><a href="<?php echo ROOT_URL; ?>users/login" class="nav-link">Login</a>
-                        </li>
-                        <li class="nav-item"><a href="<?php echo ROOT_URL; ?>users/register" class="nav-link">Register</a>
-                        </li>
+                        <?php if (isset($_SESSION['is_logged_in'])) : ?>
+                        <li class="nav-item"><a href="<?php echo ROOT_URL; ?>users/profile" class="nav-link">Welcome <?php echo $_SESSION['user_data']['name']; ?></a></li>
+                        <li class="nav-item"><a href="<?php echo ROOT_URL; ?>users/logout" class="nav-link">Logout</a></li>
+                        <?php else : ?>
+                        <li class="nav-item"><a href="<?php echo ROOT_URL; ?>users/login" class="nav-link">Login</a></li>
+                        <li class="nav-item"><a href="<?php echo ROOT_URL; ?>users/register" class="nav-link">Register</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
@@ -34,6 +37,7 @@
         </nav>
         <div class="container">
             <br/>
+              <?php Messages::display(); ?>
               <?php require($view); ?>
 
         </div>
